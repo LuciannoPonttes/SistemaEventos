@@ -1,19 +1,18 @@
-package com.sistemaevento.evento.models;
-
-import jakarta.persistence.*;
-
+package com.sistemaevento.evento.model;
+import javax.persistence.*;
 import java.util.List;
 
+@Table(name = "TB_EVENTO_ONLINE")
 @Entity
 public class EventoOnline extends  Evento{
 
-    @Id
-    private  long id;
+
     @Embedded
     private Plataforma plataforma;
     @Embedded
     private Ferramenta ferramenta;
-    @OneToMany
+    @OneToMany(cascade=CascadeType.PERSIST)
+    @JoinColumn(name="participante_id")
     private List<Participante> participantes;
 
     public Plataforma getPlataforma() {
@@ -40,13 +39,4 @@ public class EventoOnline extends  Evento{
         this.participantes = participantes;
     }
 
-    @Override
-    public long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(long id) {
-        this.id = id;
-    }
 }

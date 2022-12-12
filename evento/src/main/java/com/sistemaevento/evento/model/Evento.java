@@ -1,19 +1,26 @@
-package com.sistemaevento.evento.models;
+package com.sistemaevento.evento.model;
 
 import com.sistemaevento.evento.enums.TipoEvento;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
+import com.sun.istack.NotNull;
 
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@MappedSuperclass
 public abstract class Evento implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private  Long id;
 
-    private long id;
+    @NotNull
     private String nome;
+    @NotNull
     private TipoEvento tipoEvento;
+    @NotNull
     private Date data;
 
     public String getNome() {
@@ -40,11 +47,11 @@ public abstract class Evento implements Serializable {
         this.data = data;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 }

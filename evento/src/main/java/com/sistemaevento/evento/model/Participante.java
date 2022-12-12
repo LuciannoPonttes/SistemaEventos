@@ -1,15 +1,14 @@
-package com.sistemaevento.evento.models;
+package com.sistemaevento.evento.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.*;
 
 import java.io.Serializable;
-
+@Table(name = "TB_PARTICIPANTE")
 @Entity
 public class Participante implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private  String nome;
