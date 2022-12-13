@@ -1,8 +1,14 @@
-package com.sistemaevento.evento.models;
+package com.sistemaevento.evento.model;
+
+import javax.persistence.*;
 
 import java.io.Serializable;
-public class Plataforma implements Serializable {
 
+@Entity
+public class Item implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nome;
 

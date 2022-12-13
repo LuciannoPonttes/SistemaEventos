@@ -1,11 +1,10 @@
-package com.sistemaevento.evento.models;
+package com.sistemaevento.evento.model;
 
 import com.sistemaevento.evento.enums.PerfilUsuario;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import javax.persistence.*;
 
 import java.io.Serializable;
-
+@Table(name = "TB_USUARIO")
 @Entity
 public class Usuario implements Serializable {
     private String nome;

@@ -1,16 +1,15 @@
-package com.sistemaevento.evento.models;
+package com.sistemaevento.evento.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+@Table(name = "TB_LOCAL")
 @Entity
 public class Local implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private  String nome;
     private  String localizacao;
