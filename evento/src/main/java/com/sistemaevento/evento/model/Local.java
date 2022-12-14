@@ -15,7 +15,7 @@ public class Local implements Serializable {
     private  String localizacao;
     private  int qntCadeira;
 
-    @OneToMany
+    @OneToMany(cascade=CascadeType.PERSIST)
     private List<Item> items;
 
     public String getNome() {
