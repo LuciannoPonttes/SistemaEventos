@@ -1,5 +1,6 @@
 package com.sistemaevento.evento.service;
 
+import com.sistemaevento.evento.enums.TipoEvento;
 import com.sistemaevento.evento.model.EventoOnline;
 import com.sistemaevento.evento.model.EventoPresencial;
 import com.sistemaevento.evento.repository.EventoOnlineRepository;
@@ -18,7 +19,8 @@ public class EventoPresencialService {
     public List< EventoPresencial> listar(){
         return repository.findAll();
     }
-    public void incuir(EventoPresencial eventoOnline){
-        repository.save(eventoOnline);
+    public void incuir(EventoPresencial evento){
+        evento.setTipoEvento(TipoEvento.PRESENCIAL);
+        repository.save(evento);
     }
 }

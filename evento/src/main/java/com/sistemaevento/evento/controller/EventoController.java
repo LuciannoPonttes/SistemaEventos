@@ -42,7 +42,7 @@ public class EventoController {
         }
     }
     @PostMapping(value = "/online/incluir")
-    public ResponseEntity incluirFuncionario(@RequestBody EventoOnline evento){
+    public ResponseEntity incluirEventoOnline(@RequestBody EventoOnline evento){
         try{
             eventoOnlineService.incuir(evento);
             return new ResponseEntity(null, HttpStatus.CREATED);
@@ -53,7 +53,7 @@ public class EventoController {
     }
 
     @PostMapping(value = "/presencial/incluir")
-    public ResponseEntity incluirFuncionario(@RequestBody EventoPresencial evento){
+    public ResponseEntity incluirEventoPresencial(@RequestBody EventoPresencial evento){
         try{
             eventoPresencialService.incuir(evento);
             return new ResponseEntity(null, HttpStatus.CREATED);

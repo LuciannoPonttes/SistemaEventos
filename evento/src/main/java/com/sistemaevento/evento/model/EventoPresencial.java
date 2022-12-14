@@ -6,15 +6,14 @@ import javax.persistence.*;
 @Entity
 public class EventoPresencial extends  Evento{
 
-    @OneToOne
-    private Local sala;
+    @OneToOne(cascade=CascadeType.PERSIST)
+    private Local local;
 
-
-    public Local getSala() {
-        return sala;
+    public Local getLocal() {
+        return local;
     }
 
-    public void setSala(Local sala) {
-        this.sala = sala;
+    public void setLocal(Local local) {
+        this.local = local;
     }
 }
