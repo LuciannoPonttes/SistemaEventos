@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.sistemaevento.evento.model.Local;
 
 @Repository
-public interface SalaRepository extends JpaRepository<Local, Long>{
+public interface LocalRepository extends JpaRepository<Local, Long>{
 	
 	
 

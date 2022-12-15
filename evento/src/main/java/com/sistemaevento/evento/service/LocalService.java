@@ -4,13 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sistemaevento.evento.model.Local;
-import com.sistemaevento.evento.repository.SalaRepository;
+import com.sistemaevento.evento.repository.LocalRepository;
 
 @Service
-public class SalaService {
+public class LocalService {
 	
 	@Autowired
-	private SalaRepository repository;
+	private LocalRepository repository;
 
 	public void incluirLocal(Local local) {
 		repository.save(local);

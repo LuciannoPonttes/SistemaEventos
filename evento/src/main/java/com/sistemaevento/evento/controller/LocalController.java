@@ -10,18 +10,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sistemaevento.evento.model.Local;
-import com.sistemaevento.evento.service.SalaService;
+import com.sistemaevento.evento.service.LocalService;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value="sala")
-public class SalaController {
+@RequestMapping(value="/local")
+public class LocalController {
 	
 	@Autowired
-	private SalaService service;
+	private LocalService service;
 	
-	@PostMapping(value = "/incluirSala")
-	private ResponseEntity IncluirLocal (@RequestBody Local local) {
+	@PostMapping(value = "/incluir")
+	private ResponseEntity incluirLocal (@RequestBody Local local) {
 		try {
 			service.incluirLocal(local);
 			return new ResponseEntity<>(null, HttpStatus.CREATED);
