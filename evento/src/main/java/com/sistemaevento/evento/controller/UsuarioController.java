@@ -25,6 +25,8 @@ public class UsuarioController {
             return  new ResponseEntity(funcionarioService.listaFuncionarios(), HttpStatus.BAD_REQUEST);
         }
     }
+    
+    
     @PostMapping(value = "/funcionario/incluir")
     public ResponseEntity incluirFuncionario(){
         try{

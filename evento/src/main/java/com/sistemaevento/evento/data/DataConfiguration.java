@@ -17,17 +17,15 @@ public class DataConfiguration {
 
         DriverManagerDataSource driveBanco = new DriverManagerDataSource();
         driveBanco.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        driveBanco.setUrl("jdbc:mysql://10.0.0.105:3306/my_database?useTimezone=true&serverTimezone=UTC");
-//        driveBanco.setUsername("user");
-//        driveBanco.setPassword("root");
-            driveBanco.setDriverClassName("com.mysql.cj.jdbc.Driver");
-            driveBanco.setUrl("jdbc:mysql://b3tb7m1v7hvkjmjw7apy-mysql.services.clever-cloud.com:3306/b3tb7m1v7hvkjmjw7apy?useTimezone=true&serverTimezone=UTC");
-            driveBanco.setUsername("ujhjago0sd02ddly");
-            driveBanco.setPassword("HRshw59rXoOZqxANcxh4");
+        driveBanco.setUrl("jdbc:mysql://bmydx53hvaupquiupsev-mysql.services.clever-cloud.com:3306/bmydx53hvaupquiupsev");
+		driveBanco.setUsername("uqzu3xu8qtpu9ow7");
+		driveBanco.setPassword("bReyByaXdqL3vCMVuyue");
 
         return driveBanco;
 
     }
+    
+    
     @Bean // Parametros do Hibernate
     public JpaVendorAdapter jpaVendorAdapter() {
 
